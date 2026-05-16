@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Generated Uniformity vs. Custom Originality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: calc(100vh - 40px);
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .product-card .price {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .product-card button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #2980b9;
+        }
+
+        /* --- AI-Generated Generic Card Styling (Simulated) --- */
+        /* This section represents typical, often bland, AI-generated styling. */
+        .generic-card {
+            border-color: #ccc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            background-color: #fdfdfd;
+            /* Minimalist, safe, and somewhat uninspired choices */
+        }
+        .generic-card h2 {
+            color: #333;
+        }
+        .generic-card .price {
+            color: #e74c3c;
+        }
+        .generic-card button {
+            background-color: #3498db;
+        }
+
+        /* --- Custom Original Card Styling --- */
+        /* This section demonstrates how to break uniformity with unique visual choices. */
+        .original-card {
+            background: linear-gradient(135deg, #f0f8ff, #e0f2f7); /* Unique background gradient */
+            border: 2px solid #a7d9e8; /* More prominent, custom border */
+            border-radius: 15px; /* Softer, more distinct corners */
+            box-shadow: 0 8px 20px rgba(0, 150, 200, 0.15); /* More vibrant shadow */
+            transform: rotate(-2deg); /* Subtle rotation for a playful, non-uniform look */
+            position: relative;
+            top: 10px; /* Slightly offset position */
+            padding: 25px; /* More padding */
+            text-align: left; /* Align text differently */
+            display: flex; /* Use flexbox for internal layout */
+            flex-direction: column;
+            justify-content: space-between;
+            height: 420px; /* Fixed height for consistency despite rotation */
+            overflow: hidden; /* Hide overflow from rotation */
+        }
+
+        .original-card:hover {
+            transform: translateY(-8px) rotate(-2deg); /* Maintain rotation on hover, lift more */
+            box-shadow: 0 12px 25px rgba(0, 150, 200, 0.25);
+        }
+
+        .original-card h2 {
+            font-family: 'Playfair Display', serif; /* Custom, more elegant font */
+            color: #0077b6; /* Distinct heading color */
+            font-size: 1.8em; /* Larger heading */
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .original-card p {
+            font-size: 1em; /* Slightly larger body text */
+            color: #4a6a8a; /* Different body text color */
+            margin-bottom: 10px;
+            flex-grow: 1; /* Allow description to take available space */
+        }
+
+        .original-card .price {
+            font-size: 1.5em; /* Larger price */
+            color: #005f73; /* Unique price color */
+            font-weight: 900; /* Bolder price */
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .original-card button {
+            background-color: #0077b6; /* Custom button color */
+            padding: 12px 25px; /* Larger button */
+            border-radius: 25px; /* Pill-shaped button */
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            align-self: flex-start; /* Align button to the left */
+        }
+
+        .original-card button:hover {
+            background-color: #005f73;
+            transform: scale(1.05); /* Slight scale on hover */
+        }
+
+        .original-card img {
+            border-radius: 8px; /* Slightly different image border radius */
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI-Generated Uniformity vs. Custom Originality</h1>
+
+    <div class="card-container">
+        <!-- This card simulates a generic, AI-generated component -->
+        <div class="product-card generic-card">
+            <img src="https://via.placeholder.com/280x180/e0e0e0/ffffff?text=Generic+Product" alt="Generic Product Image">
+            <h2>Generic Product Title</h2>
+            <p>This product card features standard, predictable styling, typical of what an AI might generate without specific creative prompts. It's functional but lacks distinct visual character.</p>
+            <div class="price">$29.99</div>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- This card demonstrates custom visual styling to achieve originality -->
+        <div class="product-card original-card">
+            <img src="https://via.placeholder.com/280x180/a7d9e8/0077b6?text=Unique+Item" alt="Unique Item Image">
+            <h2>Unique Handcrafted Item</h2>
+            <p>By applying custom CSS properties like gradients, unique fonts, distinct borders, and subtle transformations, this card breaks away from uniformity, offering a memorable and original visual experience.</p>
+            <div class="price">$49.99</div>
+            <button>Discover More</button>
+        </div>
+    </div>
+</body>
+</html>
